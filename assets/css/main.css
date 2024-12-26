@@ -615,7 +615,7 @@ h6 {
   top: calc(50% - 30px);
   left: calc(50% - 30px);
   border: 6px solid #ffffff;
-  border-color: var(--accent-color) transparent var(--accent-color) transparent;
+  border-color: #2A9D8F transparent #2A9D8F transparent;
   border-radius: 50%;
   width: 60px;
   height: 60px;
@@ -642,7 +642,7 @@ h6 {
   right: 15px;
   bottom: 15px;
   z-index: 99999;
-  background-color: var(--accent-color);
+  background-color: #2A9D8F;
   width: 40px;
   height: 40px;
   border-radius: 4px;
@@ -656,7 +656,7 @@ h6 {
 }
 
 .scroll-top:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background-color: color-mix(in srgb, #E76F51, transparent 20%);
   color: var(--contrast-color);
 }
 
