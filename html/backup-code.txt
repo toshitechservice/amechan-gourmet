@@ -1,0 +1,180 @@
+category-area.php自分で作ったコード
+
+<!-- Culture Category Section -->
+<section id="culture-category" class="culture-category section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <div class="section-title-container d-flex align-items-center justify-content-between">
+      <h2>難波エリア</h2>
+      <p><a href="<?php echo home_url(); ?>/tag/nanba">もっと見る</a></p>
+    </div>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row">
+
+      <?php
+      $args = array(
+        'tag' => 'nanba',
+        'posts_per_page' => 3,
+        'post_status'    => 'publish',
+      );
+      $posts = get_posts($args);
+      ?>
+      <?php foreach ($posts as $post): ?>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="post-list border-bottom">
+            <a href="blog-details.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-1.jpg" alt="" class="img-fluid"></a>
+            <div class="post-meta">
+              <span><?php echo get_the_date('Y年m月d日'); ?></span>
+            </div>
+            <h2 class="mb-2">
+              <a href="<?php the_permalink(); ?>">
+                <?php
+                $content = wp_trim_words(get_the_title(),  12, '...');
+                echo $content;
+                ?>
+              </a>
+            </h2>
+          </div>
+        </div>
+      <?php endforeach; ?>
+
+    </div>
+
+  </div>
+
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <div class="section-title-container d-flex align-items-center justify-content-between">
+      <h2>梅田エリア</h2>
+      <p><a href="<?php echo home_url(); ?>/tag/umeda">もっと見る</a></p>
+    </div>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row">
+
+      <?php
+      $args = array(
+        'tag' => 'umeda',
+        'posts_per_page' => 3,
+        'post_status'    => 'publish',
+      );
+      $posts = get_posts($args);
+      ?>
+      <?php foreach ($posts as $post): ?>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="post-list border-bottom">
+            <a href="blog-details.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-1.jpg" alt="" class="img-fluid"></a>
+            <div class="post-meta">
+              <span><?php echo get_the_date('Y年m月d日'); ?></span>
+            </div>
+            <h2 class="mb-2">
+              <a href="<?php the_permalink(); ?>">
+                <?php
+                $content = wp_trim_words(get_the_title(),  12, '...');
+                echo $content;
+                ?>
+              </a>
+            </h2>
+          </div>
+        </div>
+      <?php endforeach; ?>
+
+    </div>
+
+  </div>
+
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <div class="section-title-container d-flex align-items-center justify-content-between">
+      <h2>天王寺エリア</h2>
+      <p><a href="<?php echo home_url(); ?>/tag/tennoji">もっと見る</a></p>
+    </div>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row">
+
+      <?php
+      $args = array(
+        'tag' => 'tennoji',
+        'posts_per_page' => 3,
+        'post_status'    => 'publish',
+      );
+      $posts = get_posts($args);
+      ?>
+      <?php foreach ($posts as $post): ?>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="post-list border-bottom">
+            <a href="blog-details.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-1.jpg" alt="" class="img-fluid"></a>
+            <div class="post-meta">
+              <span><?php echo get_the_date('Y年m月d日'); ?></span>
+            </div>
+            <h2 class="mb-2">
+              <a href="<?php the_permalink(); ?>">
+                <?php
+                $content = wp_trim_words(get_the_title(),  12, '...');
+                echo $content;
+                ?>
+              </a>
+            </h2>
+          </div>
+        </div>
+      <?php endforeach; ?>
+
+    </div>
+
+  </div>
+
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <div class="section-title-container d-flex align-items-center justify-content-between">
+      <h2>その他エリア</h2>
+      <p><a href="<?php echo home_url(); ?>/tag/other-area">もっと見る</a></p>
+    </div>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row">
+
+      <?php
+      $args = array(
+        'tag' => 'other-area',
+        'posts_per_page' => 3,
+      );
+      $posts = get_posts($args);
+      ?>
+      <?php foreach ($posts as $post): ?>
+        <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="post-list border-bottom">
+            <a href="blog-details.html"><img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-1.jpg" alt="" class="img-fluid"></a>
+            <div class="post-meta">
+              <span><?php echo get_the_date('Y年m月d日'); ?></span>
+            </div>
+            <h2 class="mb-2">
+              <a href="<?php the_permalink(); ?>">
+                <?php
+                $content = wp_trim_words(get_the_title(),  12, '...');
+                echo $content;
+                ?>
+              </a>
+            </h2>
+          </div>
+        </div>
+      <?php endforeach; ?>
+
+    </div>
+
+  </div>
+
+</section><!-- /Culture Category Section -->
