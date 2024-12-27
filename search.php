@@ -57,9 +57,12 @@
 
                           <p>
                             <?php
-                            $content = wp_trim_words( get_the_content() ,  50, '...');
-                            echo $content;
-                            ?>
+                              if(has_excerpt()):
+                                echo get_the_excerpt();
+                              else:
+                                echo wp_trim_words( get_the_content() ,  50, '...');
+                              endif;
+                              ?>
                           </p>
 
                           <hr>
