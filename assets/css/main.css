@@ -65,6 +65,8 @@ body {
   background-color: var(--background-color);
   /* font-family: var(--default-font); */
   font-family: 'Roboto', sans-serif;
+  position: relative;
+  margin-top: 100px;
 }
 
 a {
@@ -151,6 +153,10 @@ h6 {
   padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
 }
 
 .header .logo {
@@ -171,7 +177,7 @@ h6 {
 }
 
 .header .header-social-links {
-  padding-right: 15px;
+  padding-right: 50px;
 }
 
 .header .header-social-links a {
@@ -343,18 +349,18 @@ h6 {
   }
 
   .navmenu ul {
-    display: none;
+    /* display: none; */
     list-style: none;
     position: absolute;
     inset: 60px 20px 20px 20px;
     padding: 10px 0;
     margin: 0;
     border-radius: 6px;
-    background-color: var(--nav-mobile-background-color);
+    /* background-color: var(--nav-mobile-background-color); */
     overflow-y: auto;
     transition: 0.3s;
     z-index: 9998;
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1); */
   }
 
   .navmenu a,
@@ -450,6 +456,133 @@ h6 {
 
   .mobile-nav-active .navmenu>ul {
     display: block;
+  }
+}
+
+
+/* 追加 */
+#navi {
+  width: 350px;
+  height: 100vh;
+  background-color: #F4A261;
+  position: fixed;
+  top: 0;
+  right: -300px;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.5s ease, right 0.5s ease;
+}
+
+.active #navi {
+  opacity: 1;
+  right: 0;
+}
+
+.nav-menu {
+  padding: 100px 50px 65px 25px;
+}
+
+/* .nav-menu li {
+  height: 65px;
+  line-height: 65px;
+} */
+
+.nav-menu a {
+  color: white;
+  font-weight: bold;
+}
+
+/* ボタン */
+.toggle-btn {
+  display: none;
+	/*ボタンを１辺30pxの正方形にする*/
+  width: 20px;
+  height: 24px;
+  position: fixed;
+  top: 35px;
+  right: 20px;
+  /*カーソルを指にする*/
+  cursor: pointer;
+  z-index: 30;
+  transition: 0.3s;
+}
+
+/*縦２pxの横棒作り*/
+.toggle-btn span {
+  display: block;
+  /*toggle-btnに依存*/
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 4px;
+  transition: all 0.5s;
+}
+
+/*要素1番目の横棒*/
+.toggle-btn span:nth-child(1) {
+  top: 4px;
+}
+
+/*要素2番目の横棒*/
+.toggle-btn span:nth-child(2) {
+  top: 12px;
+}
+
+/*要素3番目の横棒*/
+.toggle-btn span:nth-child(3) {
+  top: 20px;
+}
+
+.active .toggle-btn span:nth-child(1) {
+  /* ユーザーがChrome拡張してた場合 */
+  -webkit-transform: translateY(8px) rotate(-405deg);
+  background-color: white;
+  /* 一般 */
+  transform: translateY(8px) rotate(-405deg);
+  background-color: white;
+}
+
+.active .toggle-btn span:nth-child(2) {
+  opacity: 0;
+}
+
+.active .toggle-btn span:nth-child(3) {
+  /* ユーザーがChrome拡張してた場合 */
+  -webkit-transform: translateY(-8px) rotate(405deg);
+  background-color: white;
+  /* 一般 */
+  transform: translateY(-8px) rotate(405deg);
+  background-color: white;
+}
+
+
+/* マスク */
+#mask {
+  display: none;
+  transition: all 0.5s;
+}
+
+.active #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* background: #000; */
+  opacity: 0.8;
+  z-index: 10;
+  cursor: pointer;
+}
+
+@media (max-width: 1199px) {
+  .toggle-btn {
+    display: block;
+  }
+
+  .nav-menu-pc {
+    display: none;
   }
 }
 

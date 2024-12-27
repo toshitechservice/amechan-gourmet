@@ -56,6 +56,11 @@
 
 <!-- Main JS File -->
 <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js"></script>
+<!-- jQueryの読み込み -->
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<!-- main.jsの読み込み -->
+<script src="<?php echo get_template_directory_uri(); ?>/assets/js/btn.js"></script>
+
 
 <?php wp_footer(); ?>
 

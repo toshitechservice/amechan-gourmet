@@ -4,7 +4,7 @@
   <!-- Slider Section -->
   <section id="mainvisual">
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="container">
 
         <div class="amechan-visual">
           <img src="<?php echo get_template_directory_uri(); ?>/assets/img/mainvisual.png" alt="">
