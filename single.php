@@ -25,16 +25,6 @@
             <div class="container">
             <article class="article">
 
-              <div class="post-img">
-                <!-- <?php
-                  if (has_post_thumbnail()) {
-                    the_post_thumbnail('large', array('class' => 'img-fluid'));
-                  } else {
-                    echo '<img src="' . get_template_directory_uri() . '/assets/img/post-landscape-2.jpg" alt="" class="img-fluid mb-4">';
-                  }
-                ?> -->
-              </div>
-
               <div class="content">
                 <?php the_content(); ?>
               </div>

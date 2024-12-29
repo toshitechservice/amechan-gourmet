@@ -2158,9 +2158,9 @@ section,
 
 
 /* 追加 */
-.text-amechan,
-.email-amechan,
-.textarea-amechan {
+input[type=text],
+input[type=email],
+.wpcf7-form-control-wrap textarea {
   font-size: 14px;
   padding: 10px 15px;
   box-shadow: none;
@@ -2170,15 +2170,15 @@ section,
   border-color: color-mix(in srgb, #F4A261, transparent 55%);
 }
 
-.text-amechan:focus,
-.email-amechan:focus,
-.textarea-amechan:focus {
+input[type=text]:focus,
+input[type=email]:focus,
+.wpcf7-form-control-wrap textarea:focus {
   border-color: #2A9D8F;
 }
 
-.text-amechan::placeholder,
-.email-amechan::placeholder,
-.textarea-amechan::placeholder {
+input[type=text]::placeholder,
+input[type=email]::placeholder,
+.wpcf7-form-control-wrap textarea::placeholder {
   color: color-mix(in srgb, var(--default-color), transparent 70%);
 }
 
@@ -2190,6 +2190,8 @@ section,
   padding: 10px 30px;
   transition: 0.2s;
   border-radius: 4px;
+  display: block;
+  margin: 0 auto;
 }
 
 .submit-amechan:hover {
