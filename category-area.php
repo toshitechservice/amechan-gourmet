@@ -60,7 +60,7 @@
 
     <?php endforeach; ?>
 
-  </section><!-- /Culture Category Section -->Ï
+  </section><!-- /Culture Category Section -->
 
 </main>
 
