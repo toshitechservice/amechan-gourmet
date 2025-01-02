@@ -874,7 +874,7 @@ section,
 # Global Section Titles
 --------------------------------------------------------------*/
 .section-title {
-  margin-bottom: 60px;
+  margin-bottom: 40px;
   position: relative;
 }
 
@@ -1004,11 +1004,13 @@ section,
   box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.post-entry img {
+.post-entry img,
+.post-list img {
   transition: 0.5s;
 }
 
-.post-entry:hover img {
+.post-entry:hover img,
+.post-list:hover img {
   transform: scale(1.1);
 }
 
@@ -1057,7 +1059,8 @@ section,
   margin-bottom: 30px;
 }
 
-.top-post-info-wrap {
+.top-post-info-wrap,
+.area-post-info-wrap {
   padding: 30px;
   position: relative;
 }
@@ -1197,6 +1200,10 @@ section,
   text-decoration: underline;
 }
 
+.area-post-img {
+  margin-bottom: 0 !important;
+}
+
 .culture-category .post-entry .thumbnail {
   flex: 0 0 65%;
 }
@@ -1241,6 +1248,9 @@ section,
   font-weight: 600;
   color: color-mix(in srgb, var(--default-color), transparent 50%);
   margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 1%;
 }
 
 .post-date-amechan,
@@ -1249,8 +1259,15 @@ section,
   border-radius: 12px;
   color: var(--contrast-color);
   text-transform: uppercase;
-  padding: 6px 12px;
-  font-size: 8px;
+  padding: 6px 8px;
+  font-size: 10px;
+}
+
+@media (max-width: 468px) {
+  .post-date-amechan,
+  .culture-category .post-meta span {
+    font-size: 16px;
+  }
 }
 
 .culture-category .author .photo {
@@ -1272,6 +1289,8 @@ section,
 
 .culture-category .post-list {
   margin-bottom: 30px;
+  background-color: var(--surface-color);
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
 .culture-category .post-list img {
@@ -2015,19 +2034,23 @@ section,
 }
 
 .post-tag-amechan {
-  background-color: #264653;
+  background-color: #264653 !important;
   border-radius: 12px;
   color: white;
   text-transform: uppercase;
   font-size: 13px;
-  padding: 6px 12px;
+  padding: 6px 8px;
   font-weight: 500;
-  font-size: 8px;
+  font-size: 10px;
 }
 
 @media (max-width: 468px) {
   .post-tag {
     right: 27%;
+  }
+
+  .post-tag-amechan {
+    font-size: 16px;
   }
 }
 
