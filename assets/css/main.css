@@ -1062,6 +1062,12 @@ section,
   position: relative;
 }
 
+.top-post-info-wrap p,
+.top-post-info-wrap a,
+.top-post-info-wrap hr {
+  display: none;
+}
+
 .trending-category .custom-border {
   /* border-color: color-mix(in srgb, var(--default-color), transparent 90%) !important; */
   border-color: color-mix(in srgb, #E76F51, transparent 70%) !important;
@@ -1075,6 +1081,13 @@ section,
   .trending-category .custom-border {
     border: none !important;
   }
+
+  .top-post-info-wrap p,
+  .top-post-info-wrap a,
+  .top-post-info-wrap hr {
+    display: block;
+  }
+
 
   .sm-order1 {
     order: 1;
