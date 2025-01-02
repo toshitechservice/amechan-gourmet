@@ -26,6 +26,10 @@
               <div class="row gy-4">
                 <?php if(have_posts()): ?>
                   <?php while(have_posts()): the_post(); ?>
+                    <?php
+                    $cat = get_the_category();
+                    $catname = $cat[0]->cat_name;
+                    ?>
                     <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                       <article class="position-relative h-100">
 
@@ -37,6 +41,7 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
                           <?php endif; ?>
                           <span class="post-date"><?php echo get_the_date('m月d日'); ?></span>
+                          <span class="post-category"><?php echo esc_html($catname); ?></span>
                         </div>
 
                         <div class="post-content d-flex flex-column">
