@@ -1062,7 +1062,7 @@ section,
   position: relative;
 }
 
-.top-post-info-wrap p,
+.top-post-info-wrap h2,
 .top-post-info-wrap a,
 .top-post-info-wrap hr {
   display: none;
@@ -1082,7 +1082,7 @@ section,
     border: none !important;
   }
 
-  .top-post-info-wrap p,
+  .top-post-info-wrap h2,
   .top-post-info-wrap a,
   .top-post-info-wrap hr {
     display: block;
