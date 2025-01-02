@@ -169,7 +169,7 @@ h6 {
 }
 
 .header .logo h1 {
-  font-size: 30px;
+  font-size: 30px;
   margin: 0;
   font-weight: 500;
   color: #FFFFFF;
@@ -1000,14 +1000,28 @@ section,
 --------------------------------------------------------------*/
 .trending-category .post-entry {
   margin-bottom: 30px;
+  background-color: var(--surface-color);
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.1);
 }
 
-.trending-category .post-entry img {
-  margin-bottom: 30px;
+.post-entry img {
+  transition: 0.5s;
 }
+
+.post-entry:hover img {
+  transform: scale(1.1);
+}
+
+.top-img-wrap {
+  position: relative;
+}
+
+/*.trending-category .post-entry img {
+  margin-bottom: 30px;
+}*/
 
 .trending-category .post-entry h2 {
-  margin-bottom: 20px;
+  margin-bottom: 30px;
   font-size: 20px;
   font-weight: 600;
   line-height: 1.2;
@@ -1022,7 +1036,7 @@ section,
 }
 
 .trending-category .post-entry.lg h2 {
-  font-size: 40px;
+  font-size: 26px;
   line-height: 1;
 }
 
@@ -1034,11 +1048,27 @@ section,
   /* color: color-mix(in srgb, var(--default-color), transparent 50%); */
   color: color-mix(in srgb, #555555, transparent 25%);
   margin-bottom: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+}
+
+.top-excerpt {
+  margin-bottom: 30px;
+}
+
+.top-post-info-wrap {
+  padding: 30px;
+  position: relative;
 }
 
 .trending-category .custom-border {
   /* border-color: color-mix(in srgb, var(--default-color), transparent 90%) !important; */
   border-color: color-mix(in srgb, #E76F51, transparent 70%) !important;
+}
+
+.top-readmore span {
+  font-weight: bold;
 }
 
 @media (max-width: 768px) {
@@ -1630,6 +1660,7 @@ section,
 --------------------------------------------------------------*/
 .blog-details {
   padding-bottom: 30px;
+  padding-top: 0;
 }
 
 .blog-details .article {
@@ -2197,6 +2228,7 @@ input[type=email]::placeholder,
 .submit-amechan:hover {
   background: #E76F51;
 }
+
 
 /*--------------------------------------------------------------
 # Widgets
