@@ -30,28 +30,44 @@
           $catname = $cat[0]->cat_name;
           ?>
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="post-list border-bottom">
-              <a href="blog-details.html">
-                <?php if(has_post_thumbnail()):
-                  the_post_thumbnail('full', array('class' => 'img-fluid'));
-                ?>
-                <?php else: ?>
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
-                <?php endif; ?>
-              </a>
-              <div class="post-meta">
-                <!-- <span class="date"><?php echo $catname; ?></span>
-                  <span class="mx-1">•</span> -->
-                <span><?php echo get_the_date('Y年m月d日'); ?></span>
-              </div>
-              <h2 class="mb-2">
+            <div class="post-list">
+              <div class="top-img-wrap overflow-hidden">
                 <a href="<?php the_permalink(); ?>">
-                  <?php
-                  $content = wp_trim_words(get_the_title(),  12, '...');
-                  echo $content;
+                  <?php if(has_post_thumbnail()):
+                    the_post_thumbnail('full', array('class' => 'img-fluid  area-post-img'));
                   ?>
+                  <?php else: ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid  area-post-img">
+                  <?php endif; ?>
                 </a>
-              </h2>
+                <div class="post-meta">
+                  <?php if(has_tag()): ?>
+                    <?php
+                    $tags = get_the_tags();
+                    foreach($tags as $tag):
+                    ?>
+                    <span class="post-tag-amechan"><i class="bi bi-pin-map-fill"></i><?php echo $tag->name; ?></span>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                  <span><?php echo get_the_date('Y年m月d日'); ?></span>
+                </div>
+              </div>
+              <div class="area-post-info-wrap">
+                  <h2><?php the_title(); ?></h2>
+                  <p class="top-excerpt">
+                    <?php
+                      if(has_excerpt()):
+                        echo get_the_excerpt();
+                      else:
+                        echo wp_trim_words( get_the_content() ,  50, '...');
+                      endif;
+                    ?>
+                  </p>
+
+                  <hr class="top-post-hr">
+
+                  <a href="<?php the_permalink(); ?>" class="top-readmore stretched-link"><span>続きを読む</span><i class="bi bi-arrow-right"></i></a>
+                </div>
             </div>
           </div>
         <?php endforeach; ?>
@@ -87,28 +103,44 @@
           $catname = $cat[0]->cat_name;
           ?>
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="post-list border-bottom">
-              <a href="<?php the_permalink(); ?>">
-                <?php if(has_post_thumbnail()):
-                  the_post_thumbnail('full', array('class' => 'img-fluid'));
-                ?>
-                <?php else: ?>
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
-                <?php endif; ?>
-              </a>
-              <div class="post-meta">
-                <!-- <span class="date"><?php echo $catname; ?></span>
-                  <span class="mx-1">•</span> -->
-                <span><?php echo get_the_date('Y年m月d日'); ?></span>
-              </div>
-              <h2 class="mb-2">
+            <div class="post-list">
+              <div class="top-img-wrap overflow-hidden">
                 <a href="<?php the_permalink(); ?>">
-                  <?php
-                  $content = wp_trim_words(get_the_title(),  12, '...');
-                  echo $content;
+                  <?php if(has_post_thumbnail()):
+                    the_post_thumbnail('full', array('class' => 'img-fluid  area-post-img'));
                   ?>
+                  <?php else: ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid  area-post-img">
+                  <?php endif; ?>
                 </a>
-              </h2>
+                <div class="post-meta">
+                  <?php if(has_tag()): ?>
+                    <?php
+                    $tags = get_the_tags();
+                    foreach($tags as $tag):
+                    ?>
+                    <span class="post-tag-amechan"><i class="bi bi-pin-map-fill"></i><?php echo $tag->name; ?></span>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                  <span><?php echo get_the_date('Y年m月d日'); ?></span>
+                </div>
+              </div>
+              <div class="area-post-info-wrap">
+                  <h2><?php the_title(); ?></h2>
+                  <p class="top-excerpt">
+                    <?php
+                      if(has_excerpt()):
+                        echo get_the_excerpt();
+                      else:
+                        echo wp_trim_words( get_the_content() ,  50, '...');
+                      endif;
+                    ?>
+                  </p>
+
+                  <hr class="top-post-hr">
+
+                  <a href="<?php the_permalink(); ?>" class="top-readmore stretched-link"><span>続きを読む</span><i class="bi bi-arrow-right"></i></a>
+                </div>
             </div>
           </div>
         <?php endforeach; ?>
@@ -121,8 +153,8 @@
     <!-- Section Title -->
     <div class="container section-title" data-aos="fade-up">
       <div class="section-title-container d-flex align-items-center justify-content-between">
-        <h2>中華</h2>
-        <p><a href="<?php echo home_url(); ?>/category/chinese-food">もっと見る</a></p>
+        <h2>洋食</h2>
+        <p><a href="<?php echo home_url(); ?>/category/yoshoku">もっと見る</a></p>
       </div>
     </div><!-- End Section Title -->
 
@@ -133,7 +165,7 @@
         <?php
         $args = array(
           'post_type' => 'post',
-          'category_name' => 'chinese-food',
+          'category_name' => 'yoshoku',
           'posts_per_page' => 3,
         );
         $posts = get_posts($args);
@@ -144,28 +176,44 @@
           $catname = $cat[0]->cat_name;
           ?>
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="post-list border-bottom">
-              <a href="<?php the_permalink(); ?>">
-                <?php if(has_post_thumbnail()):
-                  the_post_thumbnail('full', array('class' => 'img-fluid'));
-                ?>
-                <?php else: ?>
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
-                <?php endif; ?>
-              </a>
-              <div class="post-meta">
-                <!-- <span class="date"><?php echo $catname; ?></span>
-                <span class="mx-1">•</span> -->
-                <span><?php echo get_the_date('Y年m月d日'); ?></span>
-              </div>
-              <h2 class="mb-2">
+            <div class="post-list">
+              <div class="top-img-wrap overflow-hidden">
                 <a href="<?php the_permalink(); ?>">
-                  <?php
-                  $content = wp_trim_words(get_the_title(),  12, '...');
-                  echo $content;
+                  <?php if(has_post_thumbnail()):
+                    the_post_thumbnail('full', array('class' => 'img-fluid  area-post-img'));
                   ?>
+                  <?php else: ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid  area-post-img">
+                  <?php endif; ?>
                 </a>
-              </h2>
+                <div class="post-meta">
+                  <?php if(has_tag()): ?>
+                    <?php
+                    $tags = get_the_tags();
+                    foreach($tags as $tag):
+                    ?>
+                    <span class="post-tag-amechan"><i class="bi bi-pin-map-fill"></i><?php echo $tag->name; ?></span>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                  <span><?php echo get_the_date('Y年m月d日'); ?></span>
+                </div>
+              </div>
+              <div class="area-post-info-wrap">
+                <h2><?php the_title(); ?></h2>
+                <p class="top-excerpt">
+                  <?php
+                    if(has_excerpt()):
+                      echo get_the_excerpt();
+                    else:
+                      echo wp_trim_words( get_the_content() ,  50, '...');
+                    endif;
+                  ?>
+                </p>
+
+                <hr class="top-post-hr">
+
+                <a href="<?php the_permalink(); ?>" class="top-readmore stretched-link"><span>続きを読む</span><i class="bi bi-arrow-right"></i></a>
+              </div>
             </div>
           </div>
         <?php endforeach; ?>
@@ -197,26 +245,44 @@
         ?>
         <?php foreach ($posts as $post): ?>
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-            <div class="post-list border-bottom">
-              <a href="<?php the_permalink(); ?>">
-                <?php if(has_post_thumbnail()):
-                  the_post_thumbnail('full', array('class' => 'img-fluid'));
-                ?>
-                <?php else: ?>
-                  <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
-                <?php endif; ?>
-              </a>
-              <div class="post-meta">
-                <span><?php echo get_the_date('Y年m月d日'); ?></span>
-              </div>
-              <h2 class="mb-2">
+            <div class="post-list">
+              <div class="top-img-wrap overflow-hidden">
                 <a href="<?php the_permalink(); ?>">
-                  <?php
-                  $content = wp_trim_words(get_the_title(),  12, '...');
-                  echo $content;
+                  <?php if(has_post_thumbnail()):
+                    the_post_thumbnail('full', array('class' => 'img-fluid  area-post-img'));
                   ?>
+                  <?php else: ?>
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid  area-post-img">
+                  <?php endif; ?>
                 </a>
-              </h2>
+                <div class="post-meta">
+                  <?php if(has_tag()): ?>
+                    <?php
+                    $tags = get_the_tags();
+                    foreach($tags as $tag):
+                    ?>
+                    <span class="post-tag-amechan"><i class="bi bi-pin-map-fill"></i><?php echo $tag->name; ?></span>
+                    <?php endforeach; ?>
+                  <?php endif; ?>
+                  <span><?php echo get_the_date('Y年m月d日'); ?></span>
+                </div>
+              </div>
+              <div class="area-post-info-wrap">
+                <h2><?php the_title(); ?></h2>
+                <p class="top-excerpt">
+                  <?php
+                    if(has_excerpt()):
+                      echo get_the_excerpt();
+                    else:
+                      echo wp_trim_words( get_the_content() ,  50, '...');
+                    endif;
+                  ?>
+                </p>
+
+                <hr class="top-post-hr">
+
+                <a href="<?php the_permalink(); ?>" class="top-readmore stretched-link"><span>続きを読む</span><i class="bi bi-arrow-right"></i></a>
+              </div>
             </div>
           </div>
         <?php endforeach; ?>
