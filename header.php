@@ -48,7 +48,7 @@
             <ul>
               <li><a href="<?php echo esc_url(home_url('/')); ?>/category/noodle">麺類</a></li>
               <li><a href="<?php echo esc_url(home_url('/')); ?>/category/meat">肉系</a></li>
-              <li><a href="<?php echo esc_url(home_url('/')); ?>/category/chinese-food">中華</a></li>
+              <li><a href="<?php echo esc_url(home_url('/')); ?>/category/yoshoku">洋食</a></li>
               <li><a href="<?php echo esc_url(home_url('/')); ?>/category/other">その他</a></li>
             </ul>
           </li>
@@ -76,7 +76,7 @@
             <ul>
               <li><a href="<?php echo esc_url(home_url('/')); ?>/category/noodle">麺類</a></li>
               <li><a href="<?php echo esc_url(home_url('/')); ?>/category/meat">肉系</a></li>
-              <li><a href="<?php echo esc_url(home_url('/')); ?>/category/chinese-food">中華</a></li>
+              <li><a href="<?php echo esc_url(home_url('/')); ?>/category/yoshoku">洋食</a></li>
               <li><a href="<?php echo esc_url(home_url('/')); ?>/category/other">その他</a></li>
             </ul>
           </li>

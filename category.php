@@ -42,6 +42,14 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/assets/img/post-landscape-2.jpg" alt="" class="img-fluid">
                           <?php endif; ?>
                           <span class="post-date"><?php echo get_the_date('Y/m/d'); ?></span>
+                          <?php if(has_tag()): ?>
+                            <?php
+                            $tags = get_the_tags();
+                            foreach($tags as $tag):
+                            ?>
+                            <span class="post-tag"><i class="bi bi-pin-map-fill"></i><?php echo $tag->name; ?></span>
+                            <?php endforeach; ?>
+                          <?php endif; ?>
                         </div>
 
                         <div class="post-content d-flex flex-column">
