@@ -2168,6 +2168,17 @@ section,
   color: var(--contrast-color);
 }
 
+@media (max-width: 468px) {
+  .blog-pagination li {
+    margin: 0 1px;
+  }
+
+  .blog-pagination li a,
+  .blog-pagination li span {
+    padding: 7px 13px;
+  }
+}
+
 /*--------------------------------------------------------------
 # Contact Section ※全ての.contactを消した
 --------------------------------------------------------------*/
