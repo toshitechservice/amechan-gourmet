@@ -3,8 +3,8 @@ $big = 999999999; // need an unlikely integer
 $paged = max(get_query_var('paged', 1), 1);
 $args = array(
 	'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-	'total' => $wp_query->max_num_pages /*全ページ数 */,
-	'current' =>  $paged/*現在のページ数*/,
+	'total' => $wp_query->max_num_pages, /*全ページ数 */
+	'current' => $paged, /*現在のページ数*/
 	'show_all' => FALSE,
 	'end_size' => 1,
 	'mid_size' => 2,
@@ -20,29 +20,28 @@ $navs = paginate_links($args);
 				<ul>
 					<?php if ($paged > 1) : ?>
 						<li class="pre">
-							<?php previous_posts_link('<i class="bi bi-chevron-left">' . '</i>') ?>
+							<?php previous_posts_link('<i class="bi bi-chevron-left"></i>'); ?>
 						</li>
 					<?php endif; ?>
 					<?php
-					$i = 1;
 					foreach ($navs as $nav) :
+						// 現在のページリンクは class="current" を含む
+						if (strpos($nav, 'class="current"') !== false) :
 					?>
-						<?php if ($paged == $i): ?>
 							<li>
 								<a class="active">
 									<?php echo $nav; ?>
 								</a>
 							</li>
-						<?php else: ?>
+						<?php else : ?>
 							<li>
 								<?php echo $nav; ?>
 							</li>
 						<?php endif; ?>
-					<?php $i++;
-					endforeach; ?>
+					<?php endforeach; ?>
 					<?php if ($paged < $wp_query->max_num_pages) : ?>
 						<li class="next">
-							<?php next_posts_link('<i class="bi bi-chevron-right">' . '</i>') ?>
+							<?php next_posts_link('<i class="bi bi-chevron-right"></i>'); ?>
 						</li>
 					<?php endif; ?>
 				</ul>
