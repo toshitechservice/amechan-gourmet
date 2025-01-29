@@ -2427,16 +2427,20 @@ input[type=email]::placeholder,
 }
 
 .amechan-button {
-  background: none;
-  color: #F4A261;
+  display: block;
+  background-color: #2A9D8F;
+  width: 30%;
+  margin: 0 auto;
+  padding: 6px 16px;
+  color: #fff;
+  border: 0;
+  border-radius: 50px;
+  font-size: 16px;
+  transition: 0.3s;
+  /* line-height: 0;
   position: absolute;
   top: 34%;
-  right: 0;
-  border: 0;
-  font-size: 16px;
-  padding: 0 16px;
-  transition: 0.3s;
-  line-height: 0;
+  right: 0; */
 }
 
 .select-widget-amechan {
