@@ -1103,6 +1103,7 @@ section,
   .sm-order3 {
     order: 3;
   }
+
 }
 
 .trending-category .author .photo {
@@ -2296,6 +2297,30 @@ input[type=email]::placeholder,
   background: #E76F51;
 }
 
+.new-post {
+  display: none;
+  width: 180px;
+  background: #2A9D8F;
+  border-radius: 4px;
+  text-align: center;
+  margin: 0 auto 36px auto;
+  padding: 10px 30px;
+  transition: 0.2s;
+}
+
+.new-post > a {
+  color: #fff;
+}
+
+.new-post:hover {
+  background: #E76F51;
+}
+
+@media (max-width: 468px) {
+  .new-post {
+    display: block;
+  }
+}
 
 /*--------------------------------------------------------------
 # Widgets
